@@ -19,7 +19,7 @@ jobs:
           run: |
             echo "My first github action job"
             ls -ltra
-            cat cat README.md
+            cat README.md
 
 
         - name: genrate ASCII artwork
