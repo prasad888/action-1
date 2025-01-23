@@ -1,0 +1,31 @@
+name: Genrate ASCII artwork
+
+on: 
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - 'feature/*'
+    
+jobs:
+    unit-testing:
+        name: Unit Testing
+        runs-on: macos-latest
+        steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v4
+
+        - name: Install cowsay programe 
+          run: brew install cowsay
+
+        - name: Execute Cowsay CMD
+          run: cowsay -f dragon "Run for cover, I am a DRAGON....RAWR" >> dragon.txt
+
+        - name: Test file exists
+          run: grep -f "dragon" dragon.txt
+        
+        - name: Read File 
+          run: cat dragon.txt
+        
+        - name: list repo files 
+          run: ls -ltra
