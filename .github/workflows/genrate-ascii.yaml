@@ -9,7 +9,7 @@ on:
     
 jobs:
     unit-testing:
-        name: Unit Testing
+        name: Testing
         runs-on: macos-latest
         steps:
         - name: Checkout Repository
