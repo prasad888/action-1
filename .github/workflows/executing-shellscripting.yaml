@@ -19,4 +19,6 @@ jobs:
           run: ls -ltra
 
         - name: Executing shell script 
-          run: ./shell-script.sh
+          run: |
+            chmod +x shell-script.sh
+            ./shell-script.sh
