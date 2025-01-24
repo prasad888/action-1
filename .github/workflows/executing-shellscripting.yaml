@@ -1,0 +1,22 @@
+name: Genrate ASCII artwork
+
+on: 
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - 'feature/*'
+    
+jobs:
+    unit-testing:
+        name: Testing
+        runs-on: macos-latest
+        steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v4
+
+        - name: list repo files 
+          run: ls -ltra
+
+        - name: Executing shell script 
+          run: ./shell-script.sh
