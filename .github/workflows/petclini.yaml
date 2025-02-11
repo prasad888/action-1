@@ -9,10 +9,8 @@ on:
     
 jobs:
     unit-testing:
-        runs-on: ubuntu-latest  # Use Ubuntu runner as base
-        container:
-          image: amazonlinux:2  # Use Amazon Linux 2 Docker image
-          options: --privileged  
+        name: petclinic 
+        runs-on: ubuntu-latest
         steps:
         - name: Checkout Repository
           uses: actions/checkout@v4
@@ -29,11 +27,9 @@ jobs:
 
 
     deployment:
-       runs-on: ubuntu-latest  # Use Ubuntu runner as base
-       container:
-         image: amazonlinux:2  # Use Amazon Linux 2 Docker image
-         options: --privileged 
-       steps:
+        name: petclinic-deployment
+        runs-on: ubuntu-latest
+        steps:
         - name: Checkout Repository
           uses: actions/checkout@v4
 

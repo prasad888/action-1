@@ -1,5 +1,5 @@
 #/bin/sh
-yum install java-1.8*
+apt-get install java-1.8*
 sudo su -
 cd /
 cd /opt
