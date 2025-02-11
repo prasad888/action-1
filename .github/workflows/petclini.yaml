@@ -1,0 +1,44 @@
+name: petclinic work
+
+on: 
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - 'feature/*'
+    
+jobs:
+    unit-testing:
+        name: petclinic 
+        runs-on: amazon-latest
+        steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v4
+
+        - name: list repo files 
+          run: ls -ltra
+
+        - name: Executing shell script 
+          run: |
+            chmod +x petclinic-shell-script.sh
+            ./petclinic-shell-script.sh
+        - name: sleep for 30 seconds
+          run: sleep 30
+
+
+    deployment:
+        name: petclinic-deployment
+        runs-on: amazon-latest
+        steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v4
+
+        - name: list repo files 
+          run: ls -ltra
+
+        - name: Executing shell script 
+          run: |
+            chmod +x tomcat.sh
+            ./tomcat.sh
+        - name: sleep for 30 seconds
+          run: sleep 30
